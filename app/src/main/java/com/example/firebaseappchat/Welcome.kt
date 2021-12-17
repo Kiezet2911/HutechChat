@@ -11,8 +11,8 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class Welcome : AppCompatActivity() {
-    private lateinit var data : FirebaseAuth
-    private lateinit var binding : ActivityWelcomeBinding
+    private lateinit var data: FirebaseAuth
+    private lateinit var binding: ActivityWelcomeBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,23 +20,19 @@ class Welcome : AppCompatActivity() {
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.BtnDK.setOnClickListener{
+        binding.BtnDK.setOnClickListener {
             btnDK()
         }
-        binding.BtnDangNhap.setOnClickListener{
+        binding.BtnDangNhap.setOnClickListener {
             btnDN()
         }
     }
 
     private fun btnDN() {
-        val intent = Intent(this, LoginActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(intent)
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun btnDK() {
-        val intent = Intent(this, SignUpActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-        startActivity(intent)
+        startActivity(Intent(this, SignUpActivity::class.java))
     }
 }
